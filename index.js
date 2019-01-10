@@ -33,7 +33,8 @@ function sign(options, cb) {
       throw new Error('Invalid certificate.');
 
     var command = util.format(
-      'openssl smime -sign -text -signer %s -inkey %s -outform DER -binary',
+      //'openssl smime -sign -text -signer %s -inkey %s -outform DER -binary',
+      'openssl smime -sign -text -signer %s -inkey %s -outform DER',
       options.cert,
       options.key
     );
